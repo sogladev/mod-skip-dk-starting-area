@@ -66,3 +66,13 @@ Skip.Deathknight.Optional.Enable = 1
 #
 
 DeleteGold.Deathknight.Optional.Enable = 1
+
+#
+#   Skip.Deathknight.Start.WeaponEnchantment
+#         EnchantmentId to apply to starting DK 2H weapons. This value is the EffectMiscValueA of SPELL_EFFECT_ENCHANT_ITEM
+#         Default:    3369 - (Rune of Cinderglacier)
+#                     3370 - (Rune of Razorice)
+#                     0 - (Disabled)
+#
+
+Skip.Deathknight.Start.WeaponEnchantment = 3369
