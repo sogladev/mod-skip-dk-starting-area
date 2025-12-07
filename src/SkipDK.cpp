@@ -114,7 +114,7 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
         player->GiveLevel(DKL);
     }
 
-    if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Start.Trained", false))
+    if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Start.Trained", true))
     {
         player->addSpell(49998, SPEC_MASK_ALL, true); // Death Strike rank 1
         player->addSpell(47528, SPEC_MASK_ALL, true); // Mind Freeze
@@ -160,7 +160,7 @@ public:
 
     void OnPlayerLogin(Player* Player)
     {
-        if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Announce.enable", true) && (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Enable", true) || sConfigMgr->GetOption<bool>("Skip.Deathknight.Optional.Enable", true)))
+        if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Announce.Enable", true) && (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Enable", true) || sConfigMgr->GetOption<bool>("Skip.Deathknight.Optional.Enable", true)))
             ChatHandler(Player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Azerothcore Skip Deathknight Starter |rmodule.");
     }
 };
@@ -178,7 +178,7 @@ public:
         {
             //These changes make it so user mistakes in the configuration file don't cause this to run 2x
             if ((sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Enable", true) && player->GetSession()->GetSecurity() == SEC_PLAYER)
-                || (sConfigMgr->GetOption<bool>("GM.Skip.Deathknight.Starter.Enable", true) && player->GetSession()->GetSecurity() >= SEC_MODERATOR))
+                || (sConfigMgr->GetOption<bool>("GM.Skip.Deathknight.Starter.Enable", false) && player->GetSession()->GetSecurity() >= SEC_MODERATOR))
             {
                 Azerothcore_skip_deathknight_HandleSkip(player);
             }
