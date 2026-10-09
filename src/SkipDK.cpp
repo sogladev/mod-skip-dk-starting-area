@@ -136,7 +136,7 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     if (player->GetTeamId() == TEAM_ALLIANCE)
     {
         player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
-        player->SetHomebind(Aloc, 1637);// Stormwind Homebind location
+        player->SetHomebind(Aloc, 1519);// Stormwind Homebind location
     }
     else
     {
