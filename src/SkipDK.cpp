@@ -141,7 +141,7 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     else
     {
         player->TeleportTo(1, 1569.59f, -4397.63f, 7.70f, 0.54f);//Orgrimmar
-        player->SetHomebind(Hloc, 1653);// Orgrimmar Homebind location
+        player->SetHomebind(Hloc, 1637);// Orgrimmar Homebind location
     }
 
     if (sConfigMgr->GetOption<bool>("DeleteGold.Deathknight.Optional.Enable", true))
